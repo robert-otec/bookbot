@@ -1,4 +1,5 @@
 import sys
+from stats import get_num_words
 
 
 def main():
@@ -18,18 +19,12 @@ def main():
     print(f"--- Begin report of {book_path} ---")
     print(f"{num_words} words found in the document")
     for item in chars_list:
-        print(f"The '{item['char']}' character was found {item['num']} times")
+        print(f"{item['char']}: {item['num']}")
     print("--- End report ---")
 
 
 def sort_on(dict):
     return dict["num"]
-
-
-def get_num_words(text):
-    words = text.split()
-    return len(words)
-
 
 def get_num_chars(text):
     char_count = {}
